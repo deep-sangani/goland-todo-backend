@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"host.local/go/golang-todo-api/src/models"
+	"host.local/go/golang-todo-api/models"
 )
 
 type Todos struct{}

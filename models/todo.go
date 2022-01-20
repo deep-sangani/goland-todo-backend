@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	"host.local/go/golang-todo-api/src/database"
+	"host.local/go/golang-todo-api/database"
 )
 
 var collection *mongo.Collection = database.GetCollectionPointer()

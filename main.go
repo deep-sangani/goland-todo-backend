@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"host.local/go/golang-todo-api/src/database"
-	"host.local/go/golang-todo-api/src/handlers"
-	"host.local/go/golang-todo-api/src/middlewares"
+	"host.local/go/golang-todo-api/database"
+	"host.local/go/golang-todo-api/handlers"
+	"host.local/go/golang-todo-api/middlewares"
 )
 
 func main() {
