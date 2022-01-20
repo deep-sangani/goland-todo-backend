@@ -16,9 +16,8 @@ var collection *mongo.Collection = database.GetCollectionPointer()
 
 // Todo is the basic todo struct
 type Todo struct {
-	ID        primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
-	Task      string             `json:"task" bson:"task" validate:"required"`
-	Completed bool               `json:"completed" bson:"copleted" validate:"required"`
+	ID   primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
+	Task string             `json:"task" bson:"task" validate:"required"`
 }
 
 // Validate runs govalidator for the struct

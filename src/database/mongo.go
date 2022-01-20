@@ -11,9 +11,9 @@ import (
 
 var collection *mongo.Collection
 
-const connectionString = "mongodb://mongo:27017/?connectTimeoutMS=5000"
-const databaseName = "todo"
-const collectionName = "todolist"
+const connectionString = "mongodb+srv://pointconnect:nXcc3hePIuE7Kbwc@cluster0.wdhuu.mongodb.net"
+const databaseName = "godevdb"
+const collectionName = "todos"
 
 // Init makes the connection creates de collection
 func Init() {

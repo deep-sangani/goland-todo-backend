@@ -13,14 +13,12 @@ func main() {
 	database.Init()
 
 	todoHandler := handlers.NewTodo()
-	bookHandler := handlers.NewBook()
 
 	router := gin.Default()
 
 	router.Use(middlewares.CORSMiddleware())
 
 	router.GET("/", todoHandler.GetTodos)
-	router.GET("/books", bookHandler.GetBooks)
 
 	router.POST("/", todoHandler.CreateTodo)
 
@@ -28,6 +26,6 @@ func main() {
 
 	router.DELETE("/:id", todoHandler.DeleteTodo)
 
-	router.Run(":9090")
+	router.Run(":4000")
 
 }
