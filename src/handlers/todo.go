@@ -34,8 +34,14 @@ func (p *Todos) CreateTodo(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
 		return
 	}
+	todoModel, err := todoModel.GetAll()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+		return
+	}
+	// c.JSON(http.StatusOK, gin.H{"tasks": todoModel})
+	c.JSON(http.StatusOK, todoModel)
 
-	c.Status(http.StatusCreated)
 }
 
 func (todo *Todos) GetTodos(c *gin.Context) {
@@ -60,7 +66,13 @@ func (todo *Todos) UpdateTodo(c *gin.Context) {
 		return
 	}
 
-	c.Status(http.StatusNoContent)
+	todoModel, err := todoModel.GetAll()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+		return
+	}
+	// c.JSON(http.StatusOK, gin.H{"tasks": todoModel})
+	c.JSON(http.StatusOK, todoModel)
 }
 
 func (todo *Todos) DeleteTodo(c *gin.Context) {
@@ -74,5 +86,11 @@ func (todo *Todos) DeleteTodo(c *gin.Context) {
 
 	}
 
-	c.Status(http.StatusNoContent)
+	todoModel, err := todoModel.GetAll()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err})
+		return
+	}
+	// c.JSON(http.StatusOK, gin.H{"tasks": todoModel})
+	c.JSON(http.StatusOK, todoModel)
 }
