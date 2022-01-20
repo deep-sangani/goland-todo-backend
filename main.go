@@ -18,13 +18,13 @@ func main() {
 
 	router.Use(middlewares.CORSMiddleware())
 
-	router.GET("/", todoHandler.GetTodos)
+	router.GET("/get", todoHandler.GetTodos)
 
-	router.POST("/", todoHandler.CreateTodo)
+	router.POST("/add", todoHandler.CreateTodo)
 
-	router.PUT("/:id", todoHandler.UpdateTodo)
+	router.PUT("/update/:id", todoHandler.UpdateTodo)
 
-	router.DELETE("/:id", todoHandler.DeleteTodo)
+	router.DELETE("/delete/:id", todoHandler.DeleteTodo)
 
 	router.Run(":4000")
 
